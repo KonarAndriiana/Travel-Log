@@ -1,10 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 
 function PlaceDetail() {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [place, setPlace] = useState(null);
+
+  useEffect(() => {
+    const storedPlaces = JSON.parse(localStorage.getItem('travelPlaces')) || [];
+    const foundPlace = storedPlaces.find(p => p.id === parseInt(id));
+    setPlace(foundPlace);
+  }, [id]);
+
+  const handleDelete = () => {
+    const storedPlaces = JSON.parse(localStorage.getItem('travelPlaces')) || [];
+    const updatedPlaces = storedPlaces.filter(p => p.id !== parseInt(id));
+    localStorage.setItem('travelPlaces', JSON.stringify(updatedPlaces));
+    navigate('/');
+  };
+
+  if (!place) {
+    return <p>Place not found.</p>;
+  }
+
   return (
     <div>
-      <h1>Place Detail</h1>
-      <p>Details about a specific place.</p>
+      <h2>{place.city}, {place.country}</h2>
+      <p>Visited on: {place.date}</p>
+      <button onClick={handleDelete}>Delete</button>
     </div>
   );
 }
