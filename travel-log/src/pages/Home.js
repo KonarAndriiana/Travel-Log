@@ -11,18 +11,21 @@ function Home() {
     } else {
       const demoData = [
         {
-          id: 1,
-          city: 'Paris',
-          country: 'France',
-          date: '2023-04-10'
+            id: 1,
+            city: 'Paris',
+            country: 'France',
+            date: '2023-04-10',
+            favorite: false
         },
-        {
-          id: 2,
-          city: 'Tokyo',
-          country: 'Japan',
-          date: '2022-09-15'
-        }
+        { 
+            id: 2,
+            city: 'Tokyo',
+            country: 'Japan',
+            date: '2022-09-15',
+            favorite: false
+        },
       ];
+
       localStorage.setItem('travelPlaces', JSON.stringify(demoData));
       setPlaces(demoData);
     }
