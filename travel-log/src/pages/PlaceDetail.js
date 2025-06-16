@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 
 function PlaceDetail() {
   const { id } = useParams();
@@ -27,7 +27,9 @@ function PlaceDetail() {
     <div>
       <h2>{place.city}, {place.country}</h2>
       <p>Visited on: {place.date}</p>
-      <button onClick={handleDelete}>Delete</button>
+
+      <Link to={`/edit/${place.id}`}><button>Edit</button></Link>
+      <button onClick={handleDelete} style={{ marginLeft: '10px' }}>Delete</button>
     </div>
   );
 }
