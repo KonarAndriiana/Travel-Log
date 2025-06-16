@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import PlaceDetail from './pages/PlaceDetail';
 import About from './pages/About';
 import AddPlace from './pages/AddPlace';
+import EditPlace from './pages/EditPlace';
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
         <Route path="/place/:id" element={<PlaceDetail />} />
         <Route path="/about" element={<About />} />
         <Route path="/add" element={<AddPlace />} />
-
+        <Route path="/edit/:id" element={<EditPlace />} />
       </Routes>
     </Router>
   );
