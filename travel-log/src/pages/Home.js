@@ -4,13 +4,11 @@ import PlaceCard from '../components/PlaceCard';
 function Home() {
   const [places, setPlaces] = useState([]);
 
-  // Načítanie dát z localStorage
   useEffect(() => {
     const storedPlaces = localStorage.getItem('travelPlaces');
     if (storedPlaces) {
       setPlaces(JSON.parse(storedPlaces));
     } else {
-      // Prvotné demo dáta
       const demoData = [
         {
           id: 1,
@@ -31,7 +29,7 @@ function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       <h1>Your Travel Places</h1>
       {places.map(place => (
         <PlaceCard key={place.id} place={place} />

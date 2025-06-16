@@ -11,7 +11,7 @@ function PlaceForm() {
     e.preventDefault();
 
     const newPlace = {
-      id: Date.now(), // jednoduchý unikátny ID
+      id: Date.now(), 
       city,
       country,
       date

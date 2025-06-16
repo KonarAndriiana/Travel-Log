@@ -1,3 +1,4 @@
+import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
@@ -5,6 +6,7 @@ import PlaceDetail from './pages/PlaceDetail';
 import About from './pages/About';
 import AddPlace from './pages/AddPlace';
 import EditPlace from './pages/EditPlace';
+
 
 
 function App() {
