@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './PlaceCard.css';
 
 function PlaceCard({ place }) {
   const toggleFavorite = () => {
@@ -20,26 +21,32 @@ function PlaceCard({ place }) {
     }
   };
 
-
   return (
     <div className="place-card">
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <div className="place-header">
         <h3>{place.city}, {place.country}</h3>
-        <button onClick={toggleFavorite} style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.5rem' }}>
-          {place.favorite ? '⭐' : '☆'}
+        <button
+          className="favorite-star"
+          onClick={toggleFavorite}
+          title={place.favorite ? 'Remove from favorites' : 'Mark as favorite'}
+        >
+          {place.favorite ? '★' : '☆'}
         </button>
       </div>
-      <p>Visited: {place.date}</p>
-      <div>
-        <Link to={`/place/${place.id}`}><button>View Details</button></Link>
-        <Link to={`/edit/${place.id}`}><button>Edit</button></Link>
-        <button onClick={deletePlace} style={{ backgroundColor: 'tomato', color: 'white', marginLeft: '0.5rem' }}>
-          Delete
-        </button>
+
+      <p className="place-date">Visited: {place.date}</p>
+
+      <div className="place-actions">
+        <Link to={`/place/${place.id}`}>
+          <button className="action-button">View Details</button>
+        </Link>
+        <Link to={`/edit/${place.id}`}>
+          <button className="action-button">Edit</button>
+        </Link>
+        <button className="delete-button" onClick={deletePlace}>Delete</button>
       </div>
     </div>
   );
 }
-
 
 export default PlaceCard;
