@@ -1,6 +1,7 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f5f7fa;
+  background-color: #f9f9f9;
+  color: #333;
   margin: 0;
   padding: 0;
 }
@@ -36,28 +37,39 @@ nav a:hover {
   padding: 1rem;
   background: white;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .place-card {
-  background-color: #e0e7ff;
-  padding: 1rem;
+  border: 1px solid #ddd;
   border-radius: 8px;
+  padding: 1rem;
   margin-bottom: 1rem;
+  background-color: #fff;
 }
 
 button {
-  background-color: #2563eb;
+  padding: 0.4rem 1rem;
+  margin: 0.3rem;
+  background-color: #3498db;
   color: white;
   border: none;
-  padding: 0.5rem 1rem;
-  margin-top: 0.5rem;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 
+button {
+  margin-right: 0.5rem;
+}
+
+
 button:hover {
-  background-color: #1d4ed8;
+  background-color: #2980b9;
+}
+
+h1, h2 {
+  color: #2c3e50;
 }
 
 form div {
@@ -71,3 +83,43 @@ input[type="date"] {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #f0f0f0;
+  color: #555;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+
+
+
+/* Responzivita */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .place-card {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  h1, h2 {
+    font-size: 1.5rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+

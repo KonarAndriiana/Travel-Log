@@ -6,29 +6,30 @@ import PlaceDetail from './pages/PlaceDetail';
 import About from './pages/About';
 import AddPlace from './pages/AddPlace';
 import EditPlace from './pages/EditPlace';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 
 
 
 function App() {
   return (
-    <Router>
-      <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/add">Add New Place</Link></li>
-        </ul>
-      </nav>
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/place/:id" element={<PlaceDetail />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/add" element={<AddPlace />} />
-        <Route path="/edit/:id" element={<EditPlace />} />
-      </Routes>
-    </Router>
+  <Router>
+  <div className="app-container">
+    <Navbar />
+    <main className="content">
+                <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/add" element={<AddPlace />} />
+            <Route path="/edit/:id" element={<EditPlace />} />
+            <Route path="/place/:id" element={<PlaceDetail />} />
+          </Routes>
+    </main>
+    <Footer />
+  </div>
+  </Router>
   );
 }
+
 
 export default App;
