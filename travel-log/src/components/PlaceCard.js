@@ -20,7 +20,11 @@ function PlaceCard({ place }) {
         </button>
       </div>
       <p>Visited: {place.date}</p>
-      <Link to={`/place/${place.id}`}><button>View Details</button></Link>
+      <div>
+        <Link to={`/place/${place.id}`}><button>View Details</button></Link>
+        <Link to={`/edit/${place.id}`}><button>Edit</button></Link>
+      </div>
+
     </div>
   );
 }
